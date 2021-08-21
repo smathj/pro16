@@ -9,9 +9,12 @@
         $.ajax({
             type:"post",
             async:false, 
-            url:"http://localhost:8090/pro16/ajaxTest2",
-            dataType:"xml",
+            url:"http://localhost:8080/pro16/ajaxTest2",
+            dataType:"xml",									// 데이터를 xml로 받겠다
             success:function (info,textStatus){
+            console.log(info);
+            console.log(textStatus);
+            
               $(info).find("book").each(function(){  
 	              var title=$(this).find("title").text();
 	              var writer=$(this).find("writer").text();

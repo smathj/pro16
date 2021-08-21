@@ -10,10 +10,20 @@
 <script>
     $(function() {
         $("#checkJson").click(function() {
-        var jsonStr  = '{"name": ["홍길동", "이순신", "임꺽정"] }';          
-        var jsonInfo = JSON.parse(jsonStr);
+        var jsonStr  = '{"name": ["홍길동", "이순신", "임꺽정"] }'; // 문자열
+        
+        console.log("jsonStr");
+        console.log(typeof jsonStr);				// string
+        console.log(jsonStr);
+        
+        var jsonInfo = JSON.parse(jsonStr);			// 문자열을 객체로 휘리릭
+        
+        console.log("jsonInfo");
+        console.log(typeof jsonInfo);				// object
+        console.log(jsonInfo);
+        
         var output ="회원 이름<br>";
-        output += "=======<br>";
+ 			output += "=======<br>";
         for(var i in jsonInfo.name) {
             output += jsonInfo.name[i]+"<br>";
         }

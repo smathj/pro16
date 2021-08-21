@@ -33,13 +33,16 @@ public class MemberServlet extends HttpServlet {
 	}
 
 	private void doHandler(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter writer = response.getWriter();
 
 		String id = (String) request.getParameter("id");
 		System.out.println("id = " + id);
+		
 		MemberDAO memberDAO = new MemberDAO();
+		
 		boolean overlappedID = memberDAO.overlappedID(id);
 
 		if (overlappedID == true) {

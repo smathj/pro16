@@ -37,35 +37,42 @@ public class JsonServlet2 extends HttpServlet {
 		doHandle(request, response);
 	}
 
+	@SuppressWarnings("unchecked")
 	private void doHandle(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter writer = response.getWriter();
 
-		JSONObject totalObject = new JSONObject();
-		JSONArray membersArray = new JSONArray();
-		JSONObject memberInfo = new JSONObject();
+		JSONObject totalObject = new JSONObject();	// ìµœì¢… ê»ë°ê¸°ìš© JSON Obejct
+		JSONObject memberInfo = new JSONObject();	// Key : Value ìš© JSON Object
+		
+		JSONArray membersArray = new JSONArray();	// Valueì— ì‚¬ìš©í•œ JSON Array
+		
 
-		memberInfo.put("name", "¹ÚÁö¼º");
-		memberInfo.put("age", "25");
-		memberInfo.put("gender", "³²ÀÚ");
-		memberInfo.put("nickname", "³¯¼¾µ¹ÀÌ");
-        //  ¹è¿­¿¡ ÀÔ·Â
+		memberInfo.put("name", "í•˜ë¶ì´");
+		memberInfo.put("age", "unknown");
+		memberInfo.put("gender", "ì¤‘ì„±í™”");
+		memberInfo.put("nickname", "HaBook");
+        //  ï¿½è¿­ï¿½ï¿½ ï¿½Ô·ï¿½
 		membersArray.add(memberInfo);
 
-		memberInfo = new JSONObject();
-		memberInfo.put("name", "±è¿¬¾Æ");
-		memberInfo.put("age", "21");
-		memberInfo.put("gender", "¿©ÀÚ");
-		memberInfo.put("nickname", "Ä®Ä¡");
+		memberInfo = new JSONObject();	// ë‹¤ì‹œ ìŒ”ê±°ì¤­
+		memberInfo.put("name", "í‚¤ë¶ì´");
+		memberInfo.put("age", "unknown");
+		memberInfo.put("gender", "ìˆ˜ì»·");
+		memberInfo.put("nickname", "ë„ë² ë¥´ë§Œ");
 		membersArray.add(memberInfo);
 
-		totalObject.put("members", membersArray);
+		totalObject.put("members", membersArray);	// key : [ { ... } ] í˜•ì‹ìœ¼ë¡œ ë‹¤ì‹œ ë§Œë“¤ê³ 
 
 		String jsonInfo = totalObject.toJSONString();
+		
 		System.out.print(jsonInfo);
+		
 		writer.print(jsonInfo);
+		
 	}
 
 }

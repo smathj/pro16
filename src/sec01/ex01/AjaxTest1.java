@@ -33,12 +33,17 @@ public class AjaxTest1 extends HttpServlet {
 	}
 
 	private void doHandler(HttpServletRequest request, HttpServletResponse response)	throws ServletException, IOException {
+		
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=utf-8");
+		
 		String param = (String) request.getParameter("param");
+		
 		System.out.println("param = " + param);
+		
 		PrintWriter writer = response.getWriter();
-		writer.print("¾È³çÇÏ¼¼¿ä.¼­¹öÀÔ´Ï´Ù.");
+		
+		writer.print("ì•ˆë…•í•˜ì„¸ìš”~~! ì„œë²„ìž…ë‹ˆë‹¤!<br>");
 	}
 
 }

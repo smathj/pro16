@@ -35,17 +35,27 @@ public class JsonServlet1 extends HttpServlet {
 	}
 
 	private void doHandle(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=utf-8");
+		
 		String jsonInfo = request.getParameter("jsonInfo");
+		
 		try {
-			JSONParser jsonParser = new JSONParser();
+		
+			JSONParser jsonParser = new JSONParser();	// String 타입으로 받은 매개변수를 JSON Object로 변환하기위해 사용
+			
 			JSONObject jsonObject = (JSONObject) jsonParser.parse(jsonInfo);
-			System.out.println("* ȸ�� ����*");
+			
+			System.out.println("* 회원 정보 *");
 			System.out.println(jsonObject.get("name"));
 			System.out.println(jsonObject.get("age"));
 			System.out.println(jsonObject.get("gender"));
 			System.out.println(jsonObject.get("nickname"));
+			
+			System.out.println(jsonObject.toJSONString());
+			System.out.println(jsonObject.toString());
+		
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

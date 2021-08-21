@@ -5,28 +5,30 @@
   <title>ajax 연습1</title>
   <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script type="text/javascript">
-      function fn_process(){
+      
+  function fn_process(){
        $.ajax({
-         type:"get",
-         dataType:"text",
-         async:false,  
-         url:"http://localhost:8090/pro16/ajaxTest1",
-         data: {param:"Hello,jquery"},
-         success:function (data,textStatus){
+         type:"get",									// 메서드 타입
+         dataType:"text",								// 응답받을 데이터 타입(text,xml,json,html ...)
+         async:false,  									// 비동기식으로 할거면 false, 동기면 true
+         url:"http://localhost:8080/pro16/ajaxTest1",	// 호출 url
+         data: {param:"Hello,jquery"},					// 서버에 전달한 데이터
+         success:function (data,textStatus){			// 성공 콜백 함수
             $('#message').append(data);
          },
-         error:function(data,textStatus){
+         error:function(data,textStatus){				// 실패 콜백 함수
             alert("에러가 발생했습니다.");ㅣ
          },
-         complete:function(data,textStatus){
+         complete:function(data,textStatus){			// 최종 콜백 함수
             alert("작업을완료 했습니다");
          }
       });	
-   }		
+   }	
+  
 </script>
 </head>
 <body>
 <input type="button" value="전송하기" onClick="fn_process()" /><br><br>
-<div id="message"></div>
+<div id="message"></div>	<!-- 여기에 단다 -->
 </body>
 </html>

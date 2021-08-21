@@ -38,14 +38,14 @@ public class AjaxTest2 extends HttpServlet {
 		String result = "";
 		PrintWriter writer = response.getWriter();
 		result="<main><book>"+
-		         "<title><![CDATA[ÃÊº¸ÀÚ¸¦ À§ÇÑ ÀÚ¹Ù ÇÁ·Î±×·¡¹Ö]]></title>" +
-		         "<writer><![CDATA[ÀÎÆ÷ºÏ½º Àú | ÀÌº´½Â]]></writer>" +                             
-		         "<image><![CDATA[http://localhost:8090/pro16/image/image1.jpg]]></image>"+
+		         "<title><![CDATA[ì´ˆë³´ìžë¥¼ ìœ„í•œ ìžë°” í”„ë¡œê·¸ëž˜ë°]]></title>" +
+		         "<writer><![CDATA[[ì¸í¬ë¶ìŠ¤ ì € | ì´ë³‘ìŠ¹]]></writer>" +                             
+		         "<image><![CDATA[http://localhost:8080/pro16/image/image1.jpg]]></image>"+
 		      "</book>"+
 		      "<book>"+
-		         "<title><![CDATA[¸ðµÎÀÇ ÆÄÀÌ½ã]]></title>" +
-		         "<writer><![CDATA[±æ¹þ Àú | ÀÌ½ÂÂù]]></writer>" +                 
-		        "<image><![CDATA[http://localhost:8090/pro16/image/image2.jpg]]></image>"+
+		         "<title><![CDATA[ëª¨ë‘ì˜ íŒŒì´ì¬]]></title>" +
+		         "<writer><![CDATA[ê¸¸ë²— ì € | ì´ìŠ¹ì°¬]]></writer>" +                 
+		        "<image><![CDATA[http://localhost:8080/pro16/image/image2.jpg]]></image>"+
 		      "</book></main>";
 		System.out.println(result);
 		writer.print(result);
